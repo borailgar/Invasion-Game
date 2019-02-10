@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: a60851551c1eaca4aaceb5fcf5e82886
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bedroom3Window2
+    100002: Bedroom3Window2_001
+    100004: Bedroom3Window2_002
+    100006: Bedroom3Window2_003
+    100008: Bedroom3Window2_004
+    100010: Bedroom3Window2_005
+    100012: Bedroom3Window2_006
+    100014: Bedroom3Window2_007
+    100016: //RootNode
+    400000: Bedroom3Window2
+    400002: Bedroom3Window2_001
+    400004: Bedroom3Window2_002
+    400006: Bedroom3Window2_003
+    400008: Bedroom3Window2_004
+    400010: Bedroom3Window2_005
+    400012: Bedroom3Window2_006
+    400014: Bedroom3Window2_007
+    400016: //RootNode
+    2300000: Bedroom3Window2
+    2300002: Bedroom3Window2_001
+    2300004: Bedroom3Window2_002
+    2300006: Bedroom3Window2_003
+    2300008: Bedroom3Window2_004
+    2300010: Bedroom3Window2_005
+    2300012: Bedroom3Window2_006
+    2300014: Bedroom3Window2_007
+    3300000: Bedroom3Window2
+    3300002: Bedroom3Window2_001
+    3300004: Bedroom3Window2_002
+    3300006: Bedroom3Window2_003
+    3300008: Bedroom3Window2_004
+    3300010: Bedroom3Window2_005
+    3300012: Bedroom3Window2_006
+    3300014: Bedroom3Window2_007
+    4300000: Bedroom3Window2_007
+    4300002: Bedroom3Window2_006
+    4300004: Bedroom3Window2_005
+    4300006: Bedroom3Window2_004
+    4300008: Bedroom3Window2_003
+    4300010: Bedroom3Window2_002
+    4300012: Bedroom3Window2_001
+    4300014: Bedroom3Window2
+    6400000: Bedroom3Window2
+    6400002: Bedroom3Window2_001
+    6400004: Bedroom3Window2_002
+    6400006: Bedroom3Window2_003
+    6400008: Bedroom3Window2_004
+    6400010: Bedroom3Window2_005
+    6400012: Bedroom3Window2_006
+    6400014: Bedroom3Window2_007
+    7400000: Bedroom3WindowUp
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bedroom3WindowUp
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bedroom3Window2
+        weight: 1
+      - path: Bedroom3Window2_001
+        weight: 1
+      - path: Bedroom3Window2_002
+        weight: 1
+      - path: Bedroom3Window2_003
+        weight: 1
+      - path: Bedroom3Window2_004
+        weight: 1
+      - path: Bedroom3Window2_005
+        weight: 1
+      - path: Bedroom3Window2_006
+        weight: 1
+      - path: Bedroom3Window2_007
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

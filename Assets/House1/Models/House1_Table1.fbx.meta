@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 0016ad6babd28314491e15e00d315fb5
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: House1Table1_Piece1
+    100004: House1Table1_Piece2
+    100006: House1Table1_Piece3
+    100008: House1Table1_Piece4
+    100010: House1Table1_Piece5
+    100012: House1Table1_Piece6
+    100014: House1Table1_Piece7
+    100016: House1Table1_Piece8
+    100018: House1Table1_Piece9
+    100020: Lamp
+    400000: //RootNode
+    400002: House1Table1_Piece1
+    400004: House1Table1_Piece2
+    400006: House1Table1_Piece3
+    400008: House1Table1_Piece4
+    400010: House1Table1_Piece5
+    400012: House1Table1_Piece6
+    400014: House1Table1_Piece7
+    400016: House1Table1_Piece8
+    400018: House1Table1_Piece9
+    400020: Lamp
+    2300000: House1Table1_Piece1
+    2300002: House1Table1_Piece2
+    2300004: House1Table1_Piece3
+    2300006: House1Table1_Piece4
+    2300008: House1Table1_Piece5
+    2300010: House1Table1_Piece6
+    2300012: House1Table1_Piece7
+    2300014: House1Table1_Piece8
+    2300016: House1Table1_Piece9
+    3300000: House1Table1_Piece1
+    3300002: House1Table1_Piece2
+    3300004: House1Table1_Piece3
+    3300006: House1Table1_Piece4
+    3300008: House1Table1_Piece5
+    3300010: House1Table1_Piece6
+    3300012: House1Table1_Piece7
+    3300014: House1Table1_Piece8
+    3300016: House1Table1_Piece9
+    4300000: House1Table1_Piece3
+    4300002: House1Table1_Piece4
+    4300004: House1Table1_Piece6
+    4300006: House1Table1_Piece5
+    4300008: House1Table1_Piece8
+    4300010: House1Table1_Piece7
+    4300012: House1Table1_Piece9
+    4300014: House1Table1_Piece1
+    4300016: House1Table1_Piece2
+    6400000: House1Table1_Piece1
+    6400002: House1Table1_Piece2
+    6400004: House1Table1_Piece3
+    6400006: House1Table1_Piece4
+    6400008: House1Table1_Piece5
+    6400010: House1Table1_Piece6
+    6400012: House1Table1_Piece7
+    6400014: House1Table1_Piece8
+    6400016: House1Table1_Piece9
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 3
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

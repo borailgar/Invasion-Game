@@ -1,0 +1,14 @@
+I recommend importing the package in a new, empty project.
+Make sure your Rendering Path is set to Deffered and the Color Space is set to Linear (You can change these setting by going to Edit > Project Settings > Player)
+Also, make sure you go to Edit > Project Settings > Quality and disable the Anti-Aliasing, otherwise the HDR won't work.
+
+In order to achieve the same visual quality I presented, make sure you import the "Effects" pack (Assets > Import Package > Effects) as well as the Cinematic Image Effects from the AssetStore.
+
+After you've imported those packages, select your camera and add:
+Anti-Aliasing
+Screen Space Ambient Occlusion
+Screen Space Reflection
+Bloom
+Tonemapping Color Grading
+Vignette and Chromatic Aberration
+Fisheye

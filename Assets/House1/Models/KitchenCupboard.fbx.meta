@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 7213185789ef24640bbd75f99f781a2c
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: KitchenCupboardLarge
+    100004: KitchenCupboardLarge_006
+    100006: KitchenCupboardLarge_007
+    100008: KitchenCupboardLarge_008
+    100010: KitchenCupboardLarge_009
+    100012: KitchenCupboardLarge_010
+    100014: KitchenCupboardLarge_011
+    100016: KitchenCupboardLarge_012
+    100018: KitchenCupboardLarge_013
+    100020: KitchenCupboardLarge_014
+    100022: KitchenCupboardLarge_015
+    400000: //RootNode
+    400002: KitchenCupboardLarge
+    400004: KitchenCupboardLarge_006
+    400006: KitchenCupboardLarge_007
+    400008: KitchenCupboardLarge_008
+    400010: KitchenCupboardLarge_009
+    400012: KitchenCupboardLarge_010
+    400014: KitchenCupboardLarge_011
+    400016: KitchenCupboardLarge_012
+    400018: KitchenCupboardLarge_013
+    400020: KitchenCupboardLarge_014
+    400022: KitchenCupboardLarge_015
+    2300000: KitchenCupboardLarge
+    2300002: KitchenCupboardLarge_006
+    2300004: KitchenCupboardLarge_007
+    2300006: KitchenCupboardLarge_008
+    2300008: KitchenCupboardLarge_009
+    2300010: KitchenCupboardLarge_010
+    2300012: KitchenCupboardLarge_011
+    2300014: KitchenCupboardLarge_012
+    2300016: KitchenCupboardLarge_013
+    2300018: KitchenCupboardLarge_014
+    2300020: KitchenCupboardLarge_015
+    3300000: KitchenCupboardLarge
+    3300002: KitchenCupboardLarge_006
+    3300004: KitchenCupboardLarge_007
+    3300006: KitchenCupboardLarge_008
+    3300008: KitchenCupboardLarge_009
+    3300010: KitchenCupboardLarge_010
+    3300012: KitchenCupboardLarge_011
+    3300014: KitchenCupboardLarge_012
+    3300016: KitchenCupboardLarge_013
+    3300018: KitchenCupboardLarge_014
+    3300020: KitchenCupboardLarge_015
+    4300000: KitchenCupboardLarge_015
+    4300002: KitchenCupboardLarge_014
+    4300004: KitchenCupboardLarge_013
+    4300006: KitchenCupboardLarge_012
+    4300008: KitchenCupboardLarge_011
+    4300010: KitchenCupboardLarge_010
+    4300012: KitchenCupboardLarge_009
+    4300014: KitchenCupboardLarge_008
+    4300016: KitchenCupboardLarge_007
+    4300018: KitchenCupboardLarge_006
+    4300020: KitchenCupboardLarge
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

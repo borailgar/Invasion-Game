@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 739668308d07bb147ad74a64b6e24b81
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: House1Chair1Back
+    100006: House1Chair1Base
+    100008: House1Chair1Decor1
+    100010: House1Chair1Decor2
+    100012: House1Chair1Leg1
+    100014: House1Chair1Leg2
+    100016: House1Chair1Leg3
+    100018: House1Chair1Leg4
+    100020: House1Chair1Seat
+    100022: Lamp
+    400000: Camera
+    400002: //RootNode
+    400004: House1Chair1Back
+    400006: House1Chair1Base
+    400008: House1Chair1Decor1
+    400010: House1Chair1Decor2
+    400012: House1Chair1Leg1
+    400014: House1Chair1Leg2
+    400016: House1Chair1Leg3
+    400018: House1Chair1Leg4
+    400020: House1Chair1Seat
+    400022: Lamp
+    2300000: House1Chair1Back
+    2300002: House1Chair1Base
+    2300004: House1Chair1Decor1
+    2300006: House1Chair1Decor2
+    2300008: House1Chair1Leg1
+    2300010: House1Chair1Leg2
+    2300012: House1Chair1Leg3
+    2300014: House1Chair1Leg4
+    2300016: House1Chair1Seat
+    3300000: House1Chair1Back
+    3300002: House1Chair1Base
+    3300004: House1Chair1Decor1
+    3300006: House1Chair1Decor2
+    3300008: House1Chair1Leg1
+    3300010: House1Chair1Leg2
+    3300012: House1Chair1Leg3
+    3300014: House1Chair1Leg4
+    3300016: House1Chair1Seat
+    4300000: House1Chair1Decor2
+    4300002: House1Chair1Back
+    4300004: House1Chair1Decor1
+    4300006: House1Chair1Leg3
+    4300008: House1Chair1Leg4
+    4300010: House1Chair1Leg2
+    4300012: House1Chair1Leg1
+    4300014: House1Chair1Seat
+    4300016: House1Chair1Base
+    6400000: House1Chair1Back
+    6400002: House1Chair1Base
+    6400004: House1Chair1Decor1
+    6400006: House1Chair1Decor2
+    6400008: House1Chair1Leg1
+    6400010: House1Chair1Leg2
+    6400012: House1Chair1Leg3
+    6400014: House1Chair1Leg4
+    6400016: House1Chair1Seat
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 3
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
