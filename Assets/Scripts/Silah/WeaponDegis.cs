@@ -46,7 +46,7 @@ public class WeaponDegis : MonoBehaviour {
 		GameObject currWeapon =  transform.Find(WeaponArray[currentWeaponIndex].ToString()).gameObject;
 		currWeapon.SetActive(true);
 
-		currWeapon.GetComponent<WeaponBase>().UpdateTExt();
+		currWeapon.GetComponent<WeaponBase>().Select();
 	}
 
 	void CheckWeaponSwitch(){

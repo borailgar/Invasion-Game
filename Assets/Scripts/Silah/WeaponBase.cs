@@ -37,6 +37,8 @@ public class WeaponBase : MonoBehaviour {
 	[Header("Weapon Attributes")]
 	public FireMode fireMode = FireMode.FullAuto;
 
+	public int pellets = 1;
+
 	public int clipSize = 12;
 
 	public float damage = 20f;
@@ -111,6 +113,11 @@ public class WeaponBase : MonoBehaviour {
 		}
 	}
 
+	public void Select(){
+		isReloading = false;
+		UpdateTExt();
+	}
+
 //silah ates etme durumlari
 	void CheckFire(){
 		if (!canShoot)
@@ -131,7 +138,12 @@ public class WeaponBase : MonoBehaviour {
 	void Fire(){
 		audioSource.PlayOneShot (fireSound); 
 		fireLock = true;
-		DetectHit();
+
+		for (int i = 0; i < pellets; i++)
+		{
+			DetectHit();
+		}
+
 
 		muzzle.Stop ();
 		muzzle.Play ();
@@ -211,7 +223,7 @@ public class WeaponBase : MonoBehaviour {
 		} 
 	}
 
-	void Reload(){
+	protected virtual void Reload(){
 		if (isReloading) { //isReloading = false
 			return;
 		}
@@ -233,13 +245,13 @@ public class WeaponBase : MonoBehaviour {
 
 	public int countAnim = 0;
 //ses efektleri
-	public void OnDraw(){
+	public virtual void OnDraw(){
 		audioSource.PlayOneShot (drawPistolSound);
 		Debug.Log("PoliceDraw");
 
 	}
 
-	public void OnMagOut(){
+	public virtual void OnMagOut(){
 		isReloading = false;
 		audioSource.PlayOneShot (magOutSound);
 		countAnim++;
@@ -247,17 +259,17 @@ public class WeaponBase : MonoBehaviour {
 		Debug.Log(countAnim);
 
 	}
-	public void OnMagIn(){
+	public virtual void OnMagIn(){
 		ReloadAmmo ();
 		audioSource.PlayOneShot (magInSound);
 	}
 
-	public void OnBoltForwarded(){
+	public virtual void OnBoltForwarded(){
 		audioSource.PlayOneShot (boltSound);
 		Invoke ("ResetIsReloading", 1f);
 	}
 
-	void ResetIsReloading(){
+	protected void ResetIsReloading(){
 		isReloading = false;
 	}
 }

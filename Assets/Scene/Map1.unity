@@ -5587,6 +5587,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 468ad6f33726dab4e9925a8c560858fd, type: 3}
   fireSound_2: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   fireMode: 1
+  pellets: 1
   clipSize: 12
   damage: 20
   fireRate: 0.05
@@ -15631,6 +15632,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 01b48e85de6588840836e377dda51cc6, type: 3}
   fireSound_2: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   fireMode: 1
+  pellets: 1
   clipSize: 20
   damage: 50
   fireRate: 0.1
@@ -16539,6 +16541,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 7490161d35c3cbd46b3796b8b09f1d0e, type: 3}
   fireSound_2: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   fireMode: 0
+  pellets: 8
   clipSize: 12
   damage: 75
   fireRate: 1
@@ -16549,8 +16552,9 @@ MonoBehaviour:
   drawPistolSound: {fileID: 8300000, guid: 6602c59bcf542a14fa5a2801a1e0ed5a, type: 3}
   magInSound: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
   boltSound: {fileID: 8300000, guid: 7dbad30ab37cdaf41a027a3fbee320e2, type: 3}
-  spread: 0.1
+  spread: 0.95
   countAnim: 0
+  ammoInsertSound: {fileID: 8300000, guid: a556142d6c3623f41b7d9bdecb3ac66d, type: 3}
 --- !u!1 &1354104826
 GameObject:
   m_ObjectHideFlags: 0
