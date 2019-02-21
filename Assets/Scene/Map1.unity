@@ -5301,7 +5301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 299497311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5bbd26915eb254d9379a6a28ecb66f, type: 3}
+  m_Script: {fileID: 11500000, guid: 38060427bc5abac499d5af5676766b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 100
@@ -11181,7 +11181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c8ec8f644fecd43b74169b80120eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOne: 1
 --- !u!1 &843450973
 GameObject:
   m_ObjectHideFlags: 0
@@ -17598,6 +17597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36551be6ab23afd40bcf2963aba28452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_odul: 0
   odulText: {fileID: 509675855}
   initialize_odul: 0
 --- !u!114 &1722144970
@@ -17895,6 +17895,8 @@ MonoBehaviour:
   shootPoint: {fileID: 1363995822}
   detectRange: 2
   shopText: {fileID: 1188440700}
+  buySound: {fileID: 8300000, guid: 6b382ff3d104fdd42ac688320dc70e4e, type: 3}
+  errorSound: {fileID: 8300000, guid: 53c193c579a653b49bc1ce6db87870bd, type: 3}
 --- !u!1001 &1725220487
 Prefab:
   m_ObjectHideFlags: 0

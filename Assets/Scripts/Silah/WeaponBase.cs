@@ -218,7 +218,7 @@ public class WeaponBase : MonoBehaviour {
 	void CheckInReload(){
 
 		if (bulletKalan > 0 && (bulletsInClip < clipSize)) {
-			print ("SARJOR!!!"); //TODO: SIL
+			//print ("SARJOR!!!"); //TODO: SIL
 			Reload(); 
 		} 
 	}
@@ -239,7 +239,7 @@ public class WeaponBase : MonoBehaviour {
 		bulletKalan -= bulletStop;
 		bulletsInClip += bulletStop;
 		
-		Debug.Log("Police");
+	//	Debug.Log("Police");
 		UpdateTExt(); 
 	}
 
@@ -247,7 +247,7 @@ public class WeaponBase : MonoBehaviour {
 //ses efektleri
 	public virtual void OnDraw(){
 		audioSource.PlayOneShot (drawPistolSound);
-		Debug.Log("PoliceDraw");
+		//Debug.Log("PoliceDraw");
 
 	}
 
@@ -271,5 +271,18 @@ public class WeaponBase : MonoBehaviour {
 
 	protected void ResetIsReloading(){
 		isReloading = false;
+	}
+
+	public int GetTotalAmmo(){
+		return clipSize + maxMermi;
+	}
+
+	public int GetCurrentAmmo(){
+		return bulletsInClip + bulletKalan;
+	}
+
+	public void RefillAmmo(){
+		bulletKalan = clipSize + maxMermi ;
+		UpdateTExt(); 
 	}
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Odul : MonoBehaviour {
 
 
-	private float m_odul;
+	public float m_odul;
 	public Text odulText;
 	public int initialize_odul = 0;
 
