@@ -30,7 +30,6 @@ public class ShopDetector : MonoBehaviour {
 
 		if(Physics.Raycast(shootPoint.position, shootPoint.forward, out hit, detectRange)){
 			ShopBase shopBase = hit.transform.GetComponent<ShopBase>();
-			//Debug.Log("DEGDI");
 
 			if(shopBase == null) {
 				shopText.text = "";
@@ -47,7 +46,6 @@ public class ShopDetector : MonoBehaviour {
 				//Debug.Log("DEGDI tabanca");
 			}
 
-			//shopText.text += " (" + shopBase.cost + "TL)";
 
 			if(Input.GetKeyDown(KeyCode.F)){
 
