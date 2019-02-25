@@ -42,7 +42,11 @@ public class ShopDetector : MonoBehaviour {
 
 			}
 			else if(shopBase is StovRifleShop){
-				shopText.text = "Tabanca almak icin F tusuna basin(" + shopBase.cost + "TL)" ;
+				shopText.text = "Silah almak icin F tusuna basin(" + shopBase.cost + "TL)" ;
+				//Debug.Log("DEGDI tabanca");
+			}
+			else if(shopBase is UMP45Shop){
+				shopText.text = "Silah almak icin F tusuna basin(" + shopBase.cost + "TL)" ;
 				//Debug.Log("DEGDI tabanca");
 			}
 
@@ -62,6 +66,9 @@ public class ShopDetector : MonoBehaviour {
 				}
 				else if(shopBase is StovRifleShop){
 					purchased = BuyWeapon(Weapons.StovRifle);
+				}
+				else if(shopBase is UMP45Shop){
+					purchased = BuyWeapon(Weapons.UMP45);
 				}
 
 				if(purchased){

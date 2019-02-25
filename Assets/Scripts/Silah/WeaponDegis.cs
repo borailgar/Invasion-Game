@@ -15,7 +15,7 @@ public class WeaponDegis : MonoBehaviour {
 
 	public static WeaponDegis instance;
 	//public Weapons currentOne = Weapons.UMP45;
-	private int currentWeaponIndex = 0;
+	//private int currentWeaponIndex = 0;
 
 	/*
 	private Weapons[] WeaponArray = {
@@ -28,10 +28,13 @@ public class WeaponDegis : MonoBehaviour {
 	 private Weapons primaryWeapon = Weapons.None;
 	 private Weapons currentWeapon;
 	 private Weapons secondaryWeapon = Weapons.DefenderShotgun;
+	 private Weapons thirdWeapon = Weapons.UMP45;
+
 
 	 private GameObject primaryWeaponObj;
 	 private GameObject secondaryWeaponObj;
 	 private GameObject currentWeaponObj;
+	 private GameObject thirdWeaponObj;
 
 	 
 	void Awake(){
@@ -46,7 +49,8 @@ public class WeaponDegis : MonoBehaviour {
 		currentWeapon = secondaryWeapon;
 	//	primaryWeaponObj = FindWeaponObject(primaryWeapon);
 		secondaryWeaponObj = FindWeaponObject(secondaryWeapon);
-
+		//thirdWeaponObj = FindWeaponObject(thirdWeapon);
+		
 		currentWeaponObj = secondaryWeaponObj;
 		//Switch();
 		SelectCurrentWeapon();
@@ -79,12 +83,27 @@ public class WeaponDegis : MonoBehaviour {
 		SelectCurrentWeapon();
 	}
 
+	public void SetThirdWeapon(Weapons weapon){
+		currentWeaponObj.SetActive(false);
+		
+
+		thirdWeapon = weapon;
+		thirdWeaponObj = FindWeaponObject(weapon);
+
+		currentWeapon = thirdWeapon;
+		currentWeaponObj = thirdWeaponObj;
+
+		SelectCurrentWeapon();
+	}
+
+
 	public void ReplaceCurrentWeapon(Weapons weapon){
 		if(currentWeapon == primaryWeapon){
 			SetPrimaryWeapon(weapon);
 		}else{
 			SetSecondaryWeapon(weapon);
 		}
+		
 	}
 	public bool hasPrimaryWeapon(){
 		return primaryWeapon != Weapons.None;
@@ -111,7 +130,7 @@ public class WeaponDegis : MonoBehaviour {
 	}
 	void Update(){
 		//CheckWeaponSwitch();
-		if( primaryWeapon != null && currentWeapon != primaryWeapon && Input.GetKeyDown(KeyCode.Alpha1)){
+		if( primaryWeapon != Weapons.None && currentWeapon != primaryWeapon && Input.GetKeyDown(KeyCode.Alpha1)){
 				currentWeapon = primaryWeapon;
 				currentWeaponObj = primaryWeaponObj;
 				//primaryWeaponObj.SetActive(true);
@@ -119,7 +138,7 @@ public class WeaponDegis : MonoBehaviour {
 
 				SelectCurrentWeapon();
 		}
-		else if(secondaryWeapon != null && currentWeapon != secondaryWeapon && Input.GetKeyDown(KeyCode.Alpha2)){
+		else if(secondaryWeapon != Weapons.None && currentWeapon != secondaryWeapon && Input.GetKeyDown(KeyCode.Alpha2)){
 				currentWeapon = secondaryWeapon;
 				currentWeaponObj = secondaryWeaponObj;
 				primaryWeaponObj.SetActive(false);
@@ -127,6 +146,7 @@ public class WeaponDegis : MonoBehaviour {
 				SelectCurrentWeapon();
 
 		}
+	
 	}
 
 	
