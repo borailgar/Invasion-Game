@@ -16490,9 +16490,9 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 7490161d35c3cbd46b3796b8b09f1d0e, type: 3}
   fireSound_2: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   fireMode: 0
-  pellets: 8
+  pellets: 10
   clipSize: 12
-  damage: 75
+  damage: 20
   fireRate: 1
   bulletsInClip: 0
   bulletKalan: 0
