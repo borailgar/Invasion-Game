@@ -6,11 +6,18 @@ public class EnemySpawner : MonoBehaviour {
 
 	//TODO: Yeni prefab ekleme
 	 public GameObject zombie;
-	 [HideInInspector] public Transform[] spawnPoints;
+	// [HideInInspector] public Transform[] spawnPoints;
 
 	//Zaman araliklari
-	 public float spawnDuration = 5f;
+	 //public float spawnDuration = 5f;
 
+	 public GameObject SpawnAt(Vector3 pos, Quaternion rot ){
+			
+			GameObject enemy = Instantiate(zombie, pos, rot);
+	 		return enemy;
+	 	}	
+
+/*
 	 void Start(){
 		 spawnPoints = new Transform[transform.childCount];
 
@@ -34,4 +41,6 @@ public class EnemySpawner : MonoBehaviour {
 	 void isDied(){
 		 
 	 }
+
+ */
  }

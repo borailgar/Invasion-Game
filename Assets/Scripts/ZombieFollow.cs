@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.Events;
+
  
 public class ZombieFollow : MonoBehaviour {
    
@@ -21,6 +23,7 @@ public class ZombieFollow : MonoBehaviour {
    public float damage = 20f;
 
    public GameObject kanEffect;
+   [HideInInspector] public UnityEvent onDead;
 
    void Start(){
 		target = GameObject.Find("Player");
@@ -55,6 +58,8 @@ public class ZombieFollow : MonoBehaviour {
 			return;
 
 		if (enemy_health.val <= 0) {
+			onDead.Invoke();
+
 			isDead = true;
 			agent.isStopped = true;
 			collider_.enabled = false; 
