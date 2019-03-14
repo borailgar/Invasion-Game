@@ -20,6 +20,9 @@ public class ShopDetector : MonoBehaviour {
 	public AudioClip errorSound;
 
 	void Start(){
+		Transform inGameUITransform = GameObject.Find("/Canvas/InGame").transform;
+		shopText = inGameUITransform.Find("ShopText").GetComponent<Text>();
+
 		audioSource = GetComponent<AudioSource>();
 		weaponDegis = GetComponentInChildren<WeaponDegis>();
 		odulSistemi = GetComponent<Odul>();

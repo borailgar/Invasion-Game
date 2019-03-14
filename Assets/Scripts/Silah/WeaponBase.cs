@@ -59,16 +59,20 @@ public class WeaponBase : MonoBehaviour {
 
 	void Start(){
 
+		Transform inGameUITransform = GameObject.Find("/Canvas/InGame").transform;
+		SilahIsmi = inGameUITransform.Find("Silah").GetComponent<Text>();
+		MermiSayisi = inGameUITransform.Find("Mermi").GetComponent<Text>();
+
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		bulletsInClip = clipSize;
 		bulletKalan = maxMermi;
 
-		GameObject player = GameObject.Find("Player");
 		animator = GetComponent<Animator> ();
 		audioSource = GetComponent<AudioSource> (); 	
 		odulSistemi = player.GetComponent<Odul>();
 
 	 Invoke ("EnableWeapon", 1f); // eger mermi durumu iyiyse ates et!
-	 UpdateTExt();
+	// UpdateTExt();
 	}
 
 	public void UpdateTExt(){
@@ -115,7 +119,7 @@ public class WeaponBase : MonoBehaviour {
 
 	public void Select(){
 		isReloading = false;
-		UpdateTExt();
+		Invoke("UpdateTExt", Time.deltaTime);
 	}
 
 //silah ates etme durumlari

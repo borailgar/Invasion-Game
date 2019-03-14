@@ -26,7 +26,7 @@ public class ZombieFollow : MonoBehaviour {
    [HideInInspector] public UnityEvent onDead;
 
    void Start(){
-		target = GameObject.Find("Player");
+		target = GameObject.FindGameObjectWithTag("Player");
 		 targetHealth = target.GetComponent<Health>();
 		if(targetHealth == null){
 			throw new System.Exception("Target'de Player Component'i yok");

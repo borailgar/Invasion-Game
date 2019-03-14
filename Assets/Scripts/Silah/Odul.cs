@@ -26,6 +26,8 @@ public class Odul : MonoBehaviour {
 
 	
 	void Start () {
+		Transform inGameUITransform = GameObject.Find("/Canvas/InGame").transform;
+		odulText = inGameUITransform.Find("Para").GetComponent<Text>();
 		odulGet = initialize_odul;	
 	}
 	

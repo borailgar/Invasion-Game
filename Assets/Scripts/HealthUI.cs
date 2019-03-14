@@ -10,6 +10,11 @@ public class HealthUI : MonoBehaviour {
 	public Animator darbeAnimation;
 
 	void Start(){
+
+		Transform inGameUITransform = GameObject.Find("/Canvas/InGame").transform;
+		healthText = inGameUITransform.Find("Saglik").GetComponent<Text>();
+		darbeAnimation = inGameUITransform.Find("Darbe").GetComponent<Animator>();
+
 		health = GetComponent<Health>();
 		health.onHit.AddListener(() => { //darbe akinan noktada "Darbe" animasyonunu cagir
 			darbeAnimation.SetTrigger("Darbe");

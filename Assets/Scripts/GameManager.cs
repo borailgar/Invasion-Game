@@ -2,7 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState{
+	Hazir,
+	Oyunda,
+
+	OyunSonu
+}
+
 public class GameManager : MonoBehaviour {
+	
+	public static GameManager instance;
+	[HideInInspector] public GameState gameState = GameState.Hazir;
+	public ViewBase startView; 
+	public GameObject playerPrefab;
+	public Transform playerSpawnPoint;
+
 	public Transform[] spawnPoints;
 	 public EnemySpawner enemySpawner;
 
@@ -23,18 +37,51 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]private float zombieSpeed;
 	[SerializeField]private int killReward;
 
+	private IEnumerator CoSpawnEnemies_;
+	private IEnumerator CoEnhanceZombieStatus_;
+
+	void Awake(){
+		instance = this;
+	}
 
 
-	 void Start(){
+	 public void StartGame(){
 		zombieHP = baseZombieHP;
 		zombieSpeed = baseZombieSpeed;
 		killReward = baseKillReward;
 
-		 StartCoroutine(CoSpawnEnemies());
-		 StartCoroutine(CoEnhanceZombieStatus());
+		Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
+
+		CoSpawnEnemies_ = CoSpawnEnemies();
+		CoEnhanceZombieStatus_ = CoEnhanceZombieStatus();
+
+		 StartCoroutine(CoSpawnEnemies_);
+		 StartCoroutine(CoEnhanceZombieStatus_);
+
+		 gameState = GameState.Oyunda;
 	 }
-	 
+	 public void GameOver(){
+
+		 StopCoroutine(CoSpawnEnemies_);
+		 StopCoroutine(CoEnhanceZombieStatus_);
+		 gameState = GameState.OyunSonu;
+	 }
+
+	 public void ResetGame(){
+		 //Clean up game
+		ZombieFollow[] zombies = GameObject.FindObjectsOfType<ZombieFollow>();
+		for(int i = 0; i <zombies.Length; i++ ){
+			Destroy(zombies[i].gameObject);
+		}
+
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+ 
+		 gameState = GameState.Hazir;
+		 startView.Show();
+	 }
 	 IEnumerator CoSpawnEnemies(){
+		 yield return new WaitForSeconds(5);
 		while(true){
 			for(int i = 0; i< spawnPoints.Length; i++){
 				if(zombiesSpawned >= maxZombies ) continue;
@@ -49,7 +96,7 @@ public class GameManager : MonoBehaviour {
 				enemyKillReward.odul_miktar = killReward;
 
 				enemyZombie.onDead.AddListener(() => {
-					Debug.Log("Zombie DEAD!");
+			//		Debug.Log("Zombie DEAD!");
 					zombiesSpawned--;
 				});
 
@@ -60,6 +107,9 @@ public class GameManager : MonoBehaviour {
 	 }
 
 	 IEnumerator CoEnhanceZombieStatus(){
+
+		 yield return new WaitForSeconds(5);
+
 		 	while(true){
 				 yield return new WaitForSeconds(upgradeDuration);
 

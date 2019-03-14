@@ -13,7 +13,8 @@ public class Player : MonoBehaviour {
    [HideInInspector]public bool isDead = false;
    
    void Start(){
-	 
+	 	Transform inGameUITransform = GameObject.Find("/Canvas/InGame").transform;
+		resetEkraniAnim = inGameUITransform.Find("Death").GetComponent<Animator>();
 		player_health = GetComponent<Health> (); 
 	
    }
@@ -30,14 +31,16 @@ public class Player : MonoBehaviour {
 
 		if (player_health.val <= 0) {
 			isDead = true;
-			print("is dead");
+			//print("is dead");
 			resetEkraniAnim.SetTrigger("reset");
-			Invoke("RestartGame", 2f); //bir sonraki method
+			GameManager.instance.GameOver();
+
+			Invoke("RestartGame", 1);
 		}
 	}
-
 	void RestartGame(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		
+		resetEkraniAnim.SetTrigger("resetTrigger");
+		GameManager.instance.ResetGame();
+		Destroy(gameObject);
 	}
 }
