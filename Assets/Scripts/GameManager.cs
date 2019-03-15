@@ -9,9 +9,10 @@ public enum GameState{
 	OyunSonu
 }
 
-public class GameManager : MonoBehaviour {
+public class GameManager : Photon.PunBehaviour {
 	
 	public static GameManager instance;
+	public bool spawnZombies = true;
 	[HideInInspector] public GameState gameState = GameState.Hazir;
 	public ViewBase startView; 
 	public GameObject playerPrefab;
@@ -50,7 +51,13 @@ public class GameManager : MonoBehaviour {
 		zombieSpeed = baseZombieSpeed;
 		killReward = baseKillReward;
 
-		Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
+		//Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
+		PhotonNetwork.Instantiate("Player_", playerSpawnPoint.position, playerSpawnPoint.rotation, 0);
+		gameState = GameState.Oyunda;
+
+		if(spawnZombies == false){
+			return;
+		}
 
 		CoSpawnEnemies_ = CoSpawnEnemies();
 		CoEnhanceZombieStatus_ = CoEnhanceZombieStatus();
@@ -58,7 +65,8 @@ public class GameManager : MonoBehaviour {
 		 StartCoroutine(CoSpawnEnemies_);
 		 StartCoroutine(CoEnhanceZombieStatus_);
 
-		 gameState = GameState.Oyunda;
+
+
 	 }
 	 public void GameOver(){
 

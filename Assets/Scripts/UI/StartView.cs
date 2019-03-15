@@ -17,14 +17,29 @@ public class StartView : ViewBase {
 
 	protected override void OnInit(){
 		StartButton.onClick.AddListener(()=> {
-			Debug.Log("Start Game");
-			lobbyCam.SetActive(false);
-			inGameUI.SetActive(true);
+			
 
-		//	player.SetActive(true);
-			mainUI.SetActive(false);
+			NetworkManager.instance.Connect(
+				() => {
+					//lobbyCam.SetActive(false);
+					mainUI.SetActive(false);
+					//inGameUI.SetActive(true);
+					NetworkManager.instance.JoinOrCreateRoom(
+						()=>{
+							// Spawn Player!
+							lobbyCam.SetActive(false);
+							inGameUI.SetActive(true);
+							
+							GameManager.instance.StartGame();
 
-			GameManager.instance.StartGame();
+						}
+					);
+				},
+				() => {
+					Debug.Log("Failed to Connect");
+				}
+			);
+
 		});
 
 		OptionsButton.onClick.AddListener(()=> {

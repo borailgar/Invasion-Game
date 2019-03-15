@@ -12,7 +12,7 @@ public class WeaponHareket : MonoBehaviour {
     public float bobbingAmount = 0.1f;
 
     void Start() {
-		fpsController = GameObject.FindObjectOfType<FirstPersonController>();
+		fpsController = transform.parent.parent.parent.GetComponent<FirstPersonController>();
         xInit = transform.localPosition.x;
         yInit = transform.localPosition.y;
         
