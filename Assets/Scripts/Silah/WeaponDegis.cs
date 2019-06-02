@@ -127,6 +127,12 @@ public class WeaponDegis : MonoBehaviour {
 		currentWeaponObj.SetActive(true);
 		currentWeaponObj.GetComponent<WeaponBase>().Select();
 
+		Player.instance.SetWeapon(currentWeapon);
+
+	}
+
+	public Weapons GetCurrentWeapon(){
+		return currentWeapon;
 	}
 	void Update(){
 		//CheckWeaponSwitch();

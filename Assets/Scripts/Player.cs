@@ -7,6 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Player : Photon.PunBehaviour {
 
+	public static Player instance;
+
 	private Health player_health;
 	public Animator characterAnimator;
 
@@ -19,7 +21,12 @@ public class Player : Photon.PunBehaviour {
    private Quaternion syncRot = Quaternion.identity;
    private FirstPersonController firstPersonController;
 
+	public Transform characterWeapons;
    void Awake(){
+	   if(photonView.isMine){
+		   instance = this;
+	   }
+
 	   syncPos = transform.position;
 	   syncRot = transform.rotation;
    }
@@ -46,6 +53,10 @@ public class Player : Photon.PunBehaviour {
 			 transform.Find("PlayerCharacter").gameObject.SetActive(true);
 			 return;
 		   }
+		   else{
+			   Destroy(transform.Find("PlayerCharacter").gameObject);
+		   }
+		   
 
 		firstPersonController = GetComponent<FirstPersonController>();
 
@@ -66,7 +77,52 @@ public class Player : Photon.PunBehaviour {
 	   UpdateAnimator();
    }
 
+   public void SetWeapon(Weapons weapon){
+	   photonView.RPC("RPCSetWeapon", PhotonTargets.Others, weapon);
+   }
+
+	[PunRPC]
+	void RPCSetWeapon(Weapons weapon){
+		characterAnimator.SetBool("IsUMP45", false);
+   		characterAnimator.SetBool("isStovRifle", false);
+		characterAnimator.SetBool("isShotgun", false);
+
+	   switch(weapon){
+		   case Weapons.UMP45:
+		   		characterAnimator.SetBool("IsUMP45", true);
+				break;
+			case Weapons.StovRifle:
+		   		characterAnimator.SetBool("isStovRifle", true);
+				break;
+			case Weapons.DefenderShotgun:
+		   		characterAnimator.SetBool("isShotgun", true);
+				break;
+	   }
+
+		for(int i = 0 ;i<characterWeapons.childCount; i++ ){
+			characterWeapons.GetChild(i).gameObject.SetActive(false);
+		}
+	   characterWeapons.Find(weapon.ToString()).gameObject.SetActive(true);
+	}
 	
+	public void PlayerFireAnimation(){
+	   photonView.RPC("RPCPlayerFireAnimation", PhotonTargets.Others);
+
+	}
+	[PunRPC]
+	void RPCPlayerFireAnimation(){
+		characterAnimator.SetTrigger("Firing");
+	}
+
+	public void PlayerReloadAnimation(){
+	   photonView.RPC("RPCPlayerReloadAnimation", PhotonTargets.Others);
+
+	}
+	[PunRPC]
+	void RPCPlayerReloadAnimation(){
+		characterAnimator.SetTrigger("Reloading");
+
+	}
 	void CheckHealth(){
 		if (isDead)
 			return;
@@ -107,4 +163,9 @@ public class Player : Photon.PunBehaviour {
 			syncRot = (Quaternion) stream.ReceiveNext();
 		}
 	}
+
+	public void OnPhotonPlayerConnected(PhotonPlayer newPlayer){
+		SetWeapon(WeaponDegis.instance.GetCurrentWeapon());
+	}
+
 }

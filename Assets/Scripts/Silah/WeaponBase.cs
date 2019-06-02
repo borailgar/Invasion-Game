@@ -152,6 +152,7 @@ public class WeaponBase : MonoBehaviour {
 		muzzle.Stop ();
 		muzzle.Play ();
 
+		Player.instance.PlayerFireAnimation();
 		PlayFiredAnimation ();	
 
 	    bulletsInClip--;
@@ -223,6 +224,7 @@ public class WeaponBase : MonoBehaviour {
 
 		if (bulletKalan > 0 && (bulletsInClip < clipSize)) {
 			//print ("SARJOR!!!"); //TODO: SIL
+			Player.instance.PlayerReloadAnimation();
 			Reload(); 
 		} 
 	}

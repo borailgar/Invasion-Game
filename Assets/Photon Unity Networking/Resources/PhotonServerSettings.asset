@@ -43,4 +43,7 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - RPCSyncAnimator
+  - RPCPlayerFireAnimation
+  - RPCPlayerReloadAnimation
+  - RPCSetWeapon
   DisableAutoOpenWizard: 1
