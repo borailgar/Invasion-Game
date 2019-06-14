@@ -46,4 +46,6 @@ MonoBehaviour:
   - RPCPlayerFireAnimation
   - RPCPlayerReloadAnimation
   - RPCSetWeapon
+  - RPCPlaySoundThroughNetwork
+  - RPCPlayMuzzleflashThroughNetwork
   DisableAutoOpenWizard: 1

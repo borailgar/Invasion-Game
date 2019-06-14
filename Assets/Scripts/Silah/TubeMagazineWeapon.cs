@@ -5,6 +5,7 @@ using UnityEngine;
 public class TubeMagazineWeapon : WeaponBase {
 	[Header("Tube Magazine Weapon Sound Ref")]
 	public AudioClip ammoInsertSound;
+	
 //	public AudioClip boltSound;
 
 		protected override void Reload(){

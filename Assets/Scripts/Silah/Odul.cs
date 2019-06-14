@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class Odul : MonoBehaviour {
 
 
-	public float m_odul;
+	public float m_odul = 999;
 	public Text odulText;
-	public int initialize_odul = 0;
+	public int initialize_odul = 8888;
 
 
 //TODO : WeaponBase'de oyuncu odulu icin kullan
@@ -19,7 +19,7 @@ public class Odul : MonoBehaviour {
 			return m_odul;
 		}
 		set{
-			m_odul = value;
+			m_odul = 999;
 			UpdateUI(); 
 		}
 	}

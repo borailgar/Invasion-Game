@@ -10,6 +10,10 @@ public class Player : Photon.PunBehaviour {
 	public static Player instance;
 
 	private Health player_health;
+
+	private AudioSource audioSource;
+
+
 	public Animator characterAnimator;
 
 	[SerializeField]private Animator resetEkraniAnim;
@@ -22,6 +26,8 @@ public class Player : Photon.PunBehaviour {
    private FirstPersonController firstPersonController;
 
 	public Transform characterWeapons;
+
+	public MuzzleFlashController muzzleflashController;
    void Awake(){
 	   if(photonView.isMine){
 		   instance = this;
@@ -32,6 +38,9 @@ public class Player : Photon.PunBehaviour {
    }
    
    void Start(){
+		audioSource = GetComponents<AudioSource>()[1];
+		muzzleflashController = GetComponent<MuzzleFlashController>();
+
 	   	if(!photonView.isMine){
 
 			MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
@@ -77,6 +86,79 @@ public class Player : Photon.PunBehaviour {
 	   UpdateAnimator();
    }
 
+
+
+	public void PlaySoundThroughNetwork(string identifier){
+		photonView.RPC("RPCPlaySoundThroughNetwork", PhotonTargets.Others, identifier);
+	}
+	[PunRPC]
+	public void RPCPlaySoundThroughNetwork(string identifier){
+		switch(identifier){
+			case "DryFire":
+				audioSource.PlayOneShot(AudioManager.instance.dryFire);
+				break;
+			case "UMP45_Fire":
+				audioSource.PlayOneShot(AudioManager.instance.UMP45Fire);
+				break;
+			case "UMP45_Draw":
+				audioSource.PlayOneShot(AudioManager.instance.UMP45Draw);
+				break;
+			case "UMP45_MagIn":
+				audioSource.PlayOneShot(AudioManager.instance.UMP45MagIn);
+				break;
+			case "UMP45_MagOut":
+				audioSource.PlayOneShot(AudioManager.instance.UMP45MagOut);
+				break;
+			case "UMP45_BoltForwarded":
+				audioSource.PlayOneShot(AudioManager.instance.UMP45_BoltForwarded);
+				break;
+
+			case "Stov Rifle_Fire":
+				audioSource.PlayOneShot(AudioManager.instance.Stov_RifleFire);
+				break;
+			case "Stov Rifle_Draw":
+				audioSource.PlayOneShot(AudioManager.instance.Stov_RifleDraw);
+				break;
+			case "Stov Rifle_MagIn":
+				audioSource.PlayOneShot(AudioManager.instance.Stov_RifleMagIn);
+				break;
+			case "Stov Rifle_MagOut":
+				audioSource.PlayOneShot(AudioManager.instance.Stov_RifleMagOut);
+				break;
+			case "Stov Rifle_BoltForwarded":
+				audioSource.PlayOneShot(AudioManager.instance.Stov_Rifle_BoltForwarded);
+				break;
+
+			case "Shotgun!_Fire":
+				audioSource.PlayOneShot(AudioManager.instance.ShotgunFire);
+				break;
+			case "Shotgun!_Draw":
+				audioSource.PlayOneShot(AudioManager.instance.ShotgunDraw);
+				break;
+			case "Shotgun!_MagIn":
+				audioSource.PlayOneShot(AudioManager.instance.ShotgunMagIn);
+				break;
+			case "Shotgun!_MagOut":
+				audioSource.PlayOneShot(AudioManager.instance.ShotgunMagOut);
+				break;
+			case "Shotgun!_BoltForwarded":
+				audioSource.PlayOneShot(AudioManager.instance.Shotgun_BoltForwarded);
+				break;
+		
+		
+
+
+		}
+	}
+
+	public void PlayMuzzleflashThroughNetwork(string identifier){
+		photonView.RPC("RPCPlayMuzzleflashThroughNetwork", PhotonTargets.Others, identifier);
+	}
+
+	[PunRPC]
+	public void RPCPlayMuzzleflashThroughNetwork(string identifier){
+		muzzleflashController.PlayMuzzleflash(identifier);
+	}
    public void SetWeapon(Weapons weapon){
 	   photonView.RPC("RPCSetWeapon", PhotonTargets.Others, weapon);
    }
@@ -164,7 +246,7 @@ public class Player : Photon.PunBehaviour {
 		}
 	}
 
-	public void OnPhotonPlayerConnected(PhotonPlayer newPlayer){
+	public void newOnPhotonPlayerConnected(PhotonPlayer newPlayer){
 		SetWeapon(WeaponDegis.instance.GetCurrentWeapon());
 	}
 

@@ -139,9 +139,14 @@ public class WeaponBase : MonoBehaviour {
 		}
 	}
 
+	
+
 	void Fire(){
 		audioSource.PlayOneShot (fireSound); 
+		Player.instance.PlaySoundThroughNetwork(GetWeaponName() + "_Fire");
+
 		fireLock = true;
+
 
 		for (int i = 0; i < pellets; i++)
 		{
@@ -151,6 +156,7 @@ public class WeaponBase : MonoBehaviour {
 
 		muzzle.Stop ();
 		muzzle.Play ();
+		Player.instance.PlayMuzzleflashThroughNetwork(GetWeaponName());
 
 		Player.instance.PlayerFireAnimation();
 		PlayFiredAnimation ();	
@@ -215,6 +221,8 @@ public class WeaponBase : MonoBehaviour {
 
 	void DryFire(){ //mermisiz ates etme sesi
 		audioSource.PlayOneShot (fireSound_2); 
+		Player.instance.PlaySoundThroughNetwork("DryFire");
+
 		fireLock = true;	
 
 		StartCoroutine (ResetFireLock ());	
@@ -253,6 +261,8 @@ public class WeaponBase : MonoBehaviour {
 //ses efektleri
 	public virtual void OnDraw(){
 		audioSource.PlayOneShot (drawPistolSound);
+		Player.instance.PlaySoundThroughNetwork("_Draw");
+
 		//Debug.Log("PoliceDraw");
 
 	}
@@ -260,6 +270,8 @@ public class WeaponBase : MonoBehaviour {
 	public virtual void OnMagOut(){
 		isReloading = false;
 		audioSource.PlayOneShot (magOutSound);
+		Player.instance.PlaySoundThroughNetwork("_MagOut");
+
 		countAnim++;
 
 		Debug.Log(countAnim);
@@ -268,10 +280,14 @@ public class WeaponBase : MonoBehaviour {
 	public virtual void OnMagIn(){
 		ReloadAmmo ();
 		audioSource.PlayOneShot (magInSound);
+		Player.instance.PlaySoundThroughNetwork("_MagIn");
+
 	}
 
 	public virtual void OnBoltForwarded(){
 		audioSource.PlayOneShot (boltSound);
+		Player.instance.PlaySoundThroughNetwork("_BoldForwarded");
+
 		Invoke ("ResetIsReloading", 1f);
 	}
 
