@@ -6373,6 +6373,7 @@ GameObject:
   - component: {fileID: 1834822175}
   - component: {fileID: 1834822176}
   - component: {fileID: 1834822177}
+  - component: {fileID: 1834822178}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6425,6 +6426,7 @@ MonoBehaviour:
   zombieHP: 0
   zombieSpeed: 0
   killReward: 0
+  players: []
 --- !u!114 &1834822176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6466,6 +6468,32 @@ MonoBehaviour:
   ShotgunMagIn: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
   Shotgun_BoltForwarded: {fileID: 8300000, guid: 64a3204eef62e0f4c88958025459b3fb,
     type: 3}
+--- !u!114 &1834822178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1834822173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 1
+  instantiationId: 1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!4 &1839874491 stripped
 Transform:
   m_PrefabParentObject: {fileID: 451356, guid: b0dff613c62d2c04695eadf8156df694, type: 2}
@@ -7812,7 +7840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499aab48c73fe6d46b3d53ba0dbf5e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 1782984887385406, guid: b3b6d33148d69324cbcba1c0250e7c5f, type: 2}
+  zombiePrefabName: Zombie
 --- !u!1 &2082123346
 GameObject:
   m_ObjectHideFlags: 0

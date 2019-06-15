@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour {
+public class Health : Photon.MonoBehaviour {
 
 	public float val = 100f;
 	public Health parentRef;
@@ -19,11 +19,17 @@ public class Health : MonoBehaviour {
 		}
 
 		onHit.Invoke();
+		photonView.RPC("RPCSyncHealth", PhotonTargets.Others, val);
+		
 		val -= damage;
 
 		if(val < 0){
 			val = 0;
 		}
 	}
-	
+	[PunRPC]
+	void RPCSyncHealth(float value){
+		val = value;
+		onHit.Invoke();
+	}
 }

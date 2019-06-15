@@ -2,45 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemySpawner : Photon.MonoBehaviour {
 
+//	 public GameObject zombie;
 	//TODO: Yeni prefab ekleme
-	 public GameObject zombie;
-	// [HideInInspector] public Transform[] spawnPoints;
-
-	//Zaman araliklari
-	 //public float spawnDuration = 5f;
-
+	public string zombiePrefabName;
 	 public GameObject SpawnAt(Vector3 pos, Quaternion rot ){
 			
-			GameObject enemy = Instantiate(zombie, pos, rot);
-	 		return enemy;
+			//GameObject enemy = Instantiate(zombie, pos, rot);
+	 		GameObject enemy = PhotonNetwork.Instantiate(zombiePrefabName, pos, rot, 0);
+			return enemy;
 	 	}	
 
-/*
-	 void Start(){
-		 spawnPoints = new Transform[transform.childCount];
 
-		 for(int i = 0; i < transform.childCount; i++){
-			 spawnPoints[i] = transform.GetChild(i); 
-		 }
-		 StartCoroutine(StartSpawnings()); //TODO : instantiate var, gameobject yerine tag kullan
-	 }
-
-	 IEnumerator StartSpawnings(){
-		 while(true){
-			 for(int i = 0; i<spawnPoints.Length; i++){
-				 Transform spawnPoint = spawnPoints[i];
-				 Instantiate(zombie, spawnPoint.position, spawnPoint.rotation);
-			 }
-			 yield return new WaitForSeconds(spawnDuration);
-
-		 }
-	 }
-
-	 void isDied(){
-		 
-	 }
-
- */
  }

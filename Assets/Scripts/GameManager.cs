@@ -41,6 +41,8 @@ public class GameManager : Photon.PunBehaviour {
 	private IEnumerator CoSpawnEnemies_;
 	private IEnumerator CoEnhanceZombieStatus_;
 
+	[HideInInspector]public Player [] players;
+
 	void Awake(){
 		instance = this;
 	}
@@ -58,6 +60,9 @@ public class GameManager : Photon.PunBehaviour {
 		if(spawnZombies == false){
 			return;
 		}
+		if(!PhotonNetwork.isMasterClient){
+			return; 
+		}
 
 		CoSpawnEnemies_ = CoSpawnEnemies();
 		CoEnhanceZombieStatus_ = CoEnhanceZombieStatus();
@@ -69,7 +74,6 @@ public class GameManager : Photon.PunBehaviour {
 
 	 }
 	 public void GameOver(){
-
 		 StopCoroutine(CoSpawnEnemies_);
 		 StopCoroutine(CoEnhanceZombieStatus_);
 		 gameState = GameState.OyunSonu;
@@ -88,8 +92,15 @@ public class GameManager : Photon.PunBehaviour {
 		 gameState = GameState.Hazir;
 		 startView.Show();
 	 }
+
+	public void RefreshCurrentPlayers(){
+		players = GameObject.FindObjectsOfType<Player>(); 
+
+	 }
 	 IEnumerator CoSpawnEnemies(){
 		 yield return new WaitForSeconds(5);
+
+		RefreshCurrentPlayers();
 		while(true){
 			for(int i = 0; i< spawnPoints.Length; i++){
 				if(zombiesSpawned >= maxZombies ) continue;
@@ -107,7 +118,7 @@ public class GameManager : Photon.PunBehaviour {
 			//		Debug.Log("Zombie DEAD!");
 					zombiesSpawned--;
 				});
-
+				//enemyZombie.players = players;
 				zombiesSpawned++;
 			}
 			yield return new WaitForSeconds(spawnDuration);

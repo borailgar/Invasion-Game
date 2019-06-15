@@ -53,6 +53,9 @@ public class Player : Photon.PunBehaviour {
 				else if(script is PhotonView){
 					continue;
 				}
+				else if(script is Health){
+					continue;
+				}
 				script.enabled = false;
 			}
 				
